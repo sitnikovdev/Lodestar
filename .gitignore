@@ -1,0 +1,35 @@
+# Xcode
+#
+*.xcodeproj
+*.xcworkspace/
+!*.xcworkspace/xcshareddata/
+
+# Swift Package Manager
+#
+.build/
+.swiftpm/
+
+# Tuist
+# Tuist может создавать временные файлы кэша, артефакты и директории сборки
+.tuist-version
+.tuist-cache/
+DerivedData/
+Derived/
+
+# macOS / System files
+#
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.TemporaryItems
+
+# IDEs
+#
+.idea/
+.vscode/
+*.swp
+*.swo
+xcuserdata/
