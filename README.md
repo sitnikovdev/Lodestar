@@ -122,7 +122,7 @@ consent during onboarding. Chat responses are not medical advice.
 
 ## Project status
 
-This is a portfolio project built in public, tracked via GitHub Issues and
+This is a project built in public, tracked via GitHub Issues and
 Milestones:
 
 - **M0** — Project infrastructure (Xcode, TCA, networking/Open Wearables client, CI)
