@@ -1,25 +1,33 @@
 import UIKit
 
+
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-  var window: UIWindow?
-  private var coordinator: AppCoordinator?
+    var window: UIWindow?
+    private var coordinator: AppCoordinator?
 
-  func scene(
-      _ scene: UIScene,
-      willConnectTo session: UISceneSession,
-      options connectionOptions: UIScene.ConnectionOptions
-  ) {
-         guard let windowScene = scene as? UIWindowScene else {
-             return
-         }
+    func scene(
+        _ scene: UIScene,
+        willConnectTo session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
+    ) {
+        guard let windowScene = scene as? UIWindowScene else {
+            return
+        }
 
-         let window = UIWindow(windowScene: windowScene)
-         let coordinator = AppCoordinator(window: window)
+        let window = UIWindow(windowScene: windowScene)
 
-         self.window = window
-         self.coordinator = coordinator
+        let dependencies = AppDependencyContainer(
+            helthDataService: MockHelthDataService())
 
-         coordinator.start()
-  }
+        let coordinator = AppCoordinator(
+            window: window,
+            dependencies: dependencies
+        )
+
+        self.window = window
+        self.coordinator = coordinator
+
+        coordinator.start()
+    }
 }
