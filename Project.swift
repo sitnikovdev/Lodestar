@@ -14,9 +14,7 @@ let project = Project(
                 "UILaunchScreen": .dictionary([:])
             ]),
             sources: ["Sources/Lodestar/**"],
-            dependencies: [
-                .external(name: "ComposableArchitecture")
-            ],
+            dependencies: [],
             settings: .settings(
             base: [
                 "CODE_SIGNING_ALLOWED": "NO",
