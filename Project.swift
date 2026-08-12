@@ -11,11 +11,22 @@ let project = Project(
             bundleId: "dev.sitnikov.Lodestar",
             deploymentTargets: .iOS("18.0"),
             infoPlist: .extendingDefault(with: [
-                "UILaunchScreen": .dictionary([:])
+                "UILaunchScreen": .dictionary([:]),
+                "UIApplicationSceneManifest": .dictionary([
+                    "UIApplicationSupportsMultipleScenes": false,
+                    "UISceneConfigurations": .dictionary([
+                        "UIWindowSceneSessionRoleApplication": .array([
+                            .dictionary([
+                                "UISceneConfigurationName": "Default Configuration",
+                                "UISceneDelegateClassName": "$(PRODUCT_MODULE_NAME).SceneDelegate"
+                            ])
+                        ])
+                    ])
+                ])
             ]),
             sources: ["Sources/Lodestar/**"],
             dependencies: [
-                .external(name: "ComposableArchitecture")
+                .external(name: "SnapKit")
             ],
             settings: .settings(
             base: [

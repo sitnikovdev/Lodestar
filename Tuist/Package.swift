@@ -2,12 +2,22 @@
 
 import PackageDescription
 
+#if TUIST
+import ProjectDescription
+
+let packageSettings = PackageSettings(
+    productTypes: [
+        "SnapKit": .framework
+    ]
+)
+#endif
+
 let package = Package(
     name: "Lodestar",
     dependencies: [
         .package(
-            url: "https://github.com/pointfreeco/swift-composable-architecture",
-            from: "1.26.1"
+            url: "https://github.com/SnapKit/SnapKit.git",
+            from: "5.7.0"
         )
     ]
 )

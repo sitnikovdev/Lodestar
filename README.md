@@ -101,9 +101,10 @@ This is what the model actually receives — not your full Garmin history:
 
 ## Tech stack
 
-- **SwiftUI** for the UI
-- **The Composable Architecture (TCA)** for state management, feature composition, and testability
-- **Swift Concurrency** (async/await) throughout the data and networking layers
+- **Tuist** for project generation and module structure
+- **UIKit** for the UI
+- **SnapKit** for Auto Layout
+- **MVVM** for state management and view-logic separation
 - **[Open Wearables](https://openwearables.io)** (open-source, MIT-licensed, self-hosted) as the normalization layer between Garmin Connect and the app — avoids Garmin's official Health API partner-approval process while still going through Garmin's real OAuth flow
 - A **demo mode** with bundled JSON fixtures matching the Open Wearables schema, so the app runs fully offline without a connected Garmin account
 
@@ -122,15 +123,19 @@ consent during onboarding. Chat responses are not medical advice.
 
 ## Project status
 
-This is a project built in public, tracked via GitHub Issues and
-Milestones:
+Built in public, tracked via GitHub Issues and Milestones:
 
-- **M0** — Project infrastructure (Xcode, TCA, networking/Open Wearables client, CI)
-- **M1** — Data layer & domain model
-- **M2** — Analytics engine & evidence
-- **M3** — Dashboard
-- **M4** — AI chat
-- **M5** — Polish & release
+- **M1.1** — App lifecycle (AppDelegate, SceneDelegate, AppCoordinator) — done
+- **M1.2** — Dependency Injection
+- **M1.3** — Base UI
+- **M1.4** — MVVM
+- **M1.5** — Home vertical slice
+- **M1.6** — Quality (SwiftLint, SwiftFormat, XCTest, CI)
+- **M2** — Data layer & domain model
+- **M3** — Analytics engine & evidence
+- **M4** — Dashboard
+- **M5** — AI chat
+- **M6** — Polish & release
 
 ## License
 
