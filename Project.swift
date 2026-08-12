@@ -25,7 +25,9 @@ let project = Project(
                 ])
             ]),
             sources: ["Sources/Lodestar/**"],
-            dependencies: [],
+            dependencies: [
+                .external(name: "SnapKit")
+            ],
             settings: .settings(
             base: [
                 "CODE_SIGNING_ALLOWED": "NO",
