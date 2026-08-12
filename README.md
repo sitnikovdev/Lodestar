@@ -125,12 +125,17 @@ consent during onboarding. Chat responses are not medical advice.
 
 Built in public, tracked via GitHub Issues and Milestones:
 
-- **M0** — Project infrastructure (Tuist, Swift 6, UIKit, SnapKit, MVVM)
-- **M1** — Data layer & domain model
-- **M2** — Analytics engine & evidence
-- **M3** — Dashboard
-- **M4** — AI chat
-- **M5** — Polish & release
+- **M1.1** — App lifecycle (AppDelegate, SceneDelegate, AppCoordinator) — done
+- **M1.2** — Dependency Injection
+- **M1.3** — Base UI
+- **M1.4** — MVVM
+- **M1.5** — Home vertical slice
+- **M1.6** — Quality (SwiftLint, SwiftFormat, XCTest, CI)
+- **M2** — Data layer & domain model
+- **M3** — Analytics engine & evidence
+- **M4** — Dashboard
+- **M5** — AI chat
+- **M6** — Polish & release
 
 ## License
 
