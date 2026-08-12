@@ -104,7 +104,7 @@ This is what the model actually receives — not your full Garmin history:
 - **Tuist** for project generation and module structure
 - **UIKit** for the UI
 - **SnapKit** for Auto Layout
-- **MVVM** for state management and view-logic separation
+- **MVVM**(docs/mvvm.md) for state management and view-logic separation
 - **[Open Wearables](https://openwearables.io)** (open-source, MIT-licensed, self-hosted) as the normalization layer between Garmin Connect and the app — avoids Garmin's official Health API partner-approval process while still going through Garmin's real OAuth flow
 - A **demo mode** with bundled JSON fixtures matching the Open Wearables schema, so the app runs fully offline without a connected Garmin account
 
