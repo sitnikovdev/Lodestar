@@ -18,7 +18,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
 
         let dependencies = AppDependencyContainer(
-            helthDataService: MockHelthDataService())
+            healthDataService: MockHealthDataService())
 
         let coordinator = AppCoordinator(
             window: window,

@@ -1,17 +1,17 @@
 import Foundation
 
-protocol HelthDataService {}
-final class MockHelthDataService: HelthDataService { }
+protocol HealthDataService {}
+final class MockHealthDataService: HealthDataService { }
 
 
 final class AppDependencyContainer {
 
-    let helthDataService: HelthDataService
+    let healthDataService: HealthDataService
 
   init(
-      helthDataService: HelthDataService
+      healthDataService: HealthDataService
   ) {
-      self.helthDataService = helthDataService
+      self.healthDataService = healthDataService
   }
 
 }

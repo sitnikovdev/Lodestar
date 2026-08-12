@@ -14,10 +14,16 @@ final class AppCoordinator {
   }
 
   func start() {
-      let viewController = UIViewController()
-      viewController.view.backgroundColor = .white
+      let navigationController = UINavigationController()
 
-      window.rootViewController = viewController
+      let homeCoordinator = HomeCoordinator(
+          navigationController: navigationController,
+          dependencies: dependencies
+      )
+
+      homeCoordinator.start()
+
+      window.rootViewController = navigationController
       window.makeKeyAndVisible()
   }
 }
