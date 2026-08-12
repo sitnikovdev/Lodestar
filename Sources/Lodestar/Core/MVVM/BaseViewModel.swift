@@ -1,7 +1,6 @@
 import Foundation
 
 class BaseViewModel {
-
     let state: Observable<ViewState>
 
     init(initialState: ViewState = .idle) {

@@ -1,8 +1,7 @@
-import UIKit
 import SnapKit
+import UIKit
 
 class BaseViewController<ViewModel: BaseViewModel>: UIViewController {
-    
     private let viewModel: ViewModel
 
     private let loadingView = UIActivityIndicatorView(style: .large)
@@ -13,7 +12,7 @@ class BaseViewController<ViewModel: BaseViewModel>: UIViewController {
     }
 
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -44,7 +43,6 @@ class BaseViewController<ViewModel: BaseViewModel>: UIViewController {
 
         case .loading:
             showLoading()
-
         }
     }
 

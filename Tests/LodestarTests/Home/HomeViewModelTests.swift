@@ -1,43 +1,42 @@
-import XCTest
 @testable import Lodestar
+import XCTest
 
 final class HomeViewModelTests: XCTestCase {
+    func testInitialStateIsIdle() {
+        let sut = makeSUT()
 
-  func testInitialStateIsIdle() {
-      let sut = makeSUT()
+        XCTAssertEqual(sut.state.value, .idle)
+    }
 
-      XCTAssertEqual(sut.state.value, .idle)
-  }
+    func testOnViewDidLoadEndsInLoadedState() {
+        let sut = makeSUT()
 
-  func testOnViewDidLoadEndsInLoadedState() {
-      let sut = makeSUT()
+        sut.onViewDidLoad()
 
-      sut.onViewDidLoad()
+        XCTAssertEqual(sut.state.value, .loaded)
+    }
 
-      XCTAssertEqual(sut.state.value, .loaded)
-  }
+    func testOnViewDidLoadNotifiesObserver() {
+        let sut = makeSUT()
+        var receivedStates: [ViewState] = []
 
-  func testOnViewDidLoadNotifiesObserver() {
-      let sut = makeSUT()
-      var receivedStates: [ViewState] = []
+        sut.state.bind { state in
+            receivedStates.append(state)
+        }
 
-      sut.state.bind { state in 
-          receivedStates.append(state)
-      }
+        sut.onViewDidLoad()
 
-      sut.onViewDidLoad()
+        XCTAssertEqual(
+            receivedStates,
+            [.idle, .loading, .loaded]
+        )
+    }
 
-      XCTAssertEqual(
-          receivedStates,
-          [.idle, .loading, .loaded]
-      )
-  }
+    // MARK: - Helpers
 
-  // MARK: - Helpers
-
-  private func makeSUT() -> HomeViewModel {
-      HomeViewModel(
-          healthDataService: MockHealthDataService()
-      )
-  }
+    private func makeSUT() -> HomeViewModel {
+        HomeViewModel(
+            healthDataService: MockHealthDataService()
+        )
+    }
 }

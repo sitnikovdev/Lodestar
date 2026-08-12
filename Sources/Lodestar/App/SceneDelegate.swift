@@ -1,15 +1,13 @@
 import UIKit
 
-
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
     private var coordinator: AppCoordinator?
 
     func scene(
         _ scene: UIScene,
-        willConnectTo session: UISceneSession,
-        options connectionOptions: UIScene.ConnectionOptions
+        willConnectTo _: UISceneSession,
+        options _: UIScene.ConnectionOptions
     ) {
         guard let windowScene = scene as? UIWindowScene else {
             return
@@ -18,7 +16,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
 
         let dependencies = AppDependencyContainer(
-            healthDataService: MockHealthDataService())
+            healthDataService: MockHealthDataService()
+        )
 
         let coordinator = AppCoordinator(
             window: window,

@@ -29,11 +29,11 @@ let project = Project(
                 .external(name: "SnapKit")
             ],
             settings: .settings(
-            base: [
-                "CODE_SIGNING_ALLOWED": "NO",
-                "CODE_SIGNING_REQUIRED": "NO",
-                "ENABLE_PREVIEWS": "NO"
-            ]
+                base: [
+                    "CODE_SIGNING_ALLOWED": "NO",
+                    "CODE_SIGNING_REQUIRED": "NO",
+                    "ENABLE_PREVIEWS": "NO"
+                ]
             )
         ),
         .target(
@@ -48,11 +48,11 @@ let project = Project(
                 .target(name: "Lodestar")
             ],
             settings: .settings(
-            base: [
-                "CODE_SIGNING_ALLOWED": "NO",
-                "CODE_SIGNING_REQUIRED": "NO",
-                "ENABLE_PREVIEWS": "NO"
-            ]
+                base: [
+                    "CODE_SIGNING_ALLOWED": "NO",
+                    "CODE_SIGNING_REQUIRED": "NO",
+                    "ENABLE_PREVIEWS": "NO"
+                ]
             )
         )
     ]

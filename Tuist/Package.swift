@@ -3,13 +3,13 @@
 import PackageDescription
 
 #if TUIST
-import ProjectDescription
+    import ProjectDescription
 
-let packageSettings = PackageSettings(
-    productTypes: [
-        "SnapKit": .framework
-    ]
-)
+    let packageSettings = PackageSettings(
+        productTypes: [
+            "SnapKit": .framework
+        ]
+    )
 #endif
 
 let package = Package(

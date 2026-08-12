@@ -1,8 +1,7 @@
-import XCTest
 @testable import Lodestar
+import XCTest
 
 final class ObservableTests: XCTestCase {
-
     func testBindImmediatelyReceivesCurrentValue() {
         let observable = Observable<Int>(42)
         var receivedValue: Int?
@@ -31,10 +30,10 @@ final class ObservableTests: XCTestCase {
     func testBindReplacesPreviousObserver() {
         let observable = Observable<Int>(0)
 
-        var firstObserverValue:[Int] = []
+        var firstObserverValue: [Int] = []
         var secondObserverValues: [Int] = []
 
-        observable.bind {value in
+        observable.bind { value in
             firstObserverValue.append(value)
         }
 
@@ -46,7 +45,5 @@ final class ObservableTests: XCTestCase {
 
         XCTAssertEqual(firstObserverValue, [0])
         XCTAssertEqual(secondObserverValues, [0, 1])
-
     }
-
 }
